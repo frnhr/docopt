@@ -4,7 +4,7 @@
   quick_example.py -h | --help | --version
 
 """
-from docopt import docopt
+from docopt_plus import docopt
 
 
 def load_json_config():

@@ -1,3 +1,64 @@
+Fork information
+======================================================================
+
+
+``docopt_plus`` is a fork of `Docopt <https://github.com/docopt/docopt>`_.
+
+This fork adds some features that are not GNU / POSIX standard, and
+might not be as widely recognized.
+
+Features specific to ``docopt_plus``:
+
+- Pattern groups
+
+
+See the original `Docopt <https://github.com/docopt/docopt>`_ project
+for a more stable and better supported package. If do not require any
+of the features that ``docopt_plus`` adds to Docopt, I encourage you
+to use the original project.
+
+Stability
+----------------------------------------------------------------------
+
+I will do my best to keep up with changes to Docopt. However, I make
+no promisses.
+
+Current verions of ``dopcopt_plus`` is based on a working bransh of
+``docopt``, version ``pre-0.6.3``. Hence current ``docopt_plus``
+version is ``0.6.3-alpha``
+
+That said, ``docopt` comes with a very good test coverage, and
+``docopt_plus`` adds to those tests, keeping 100% compatibility with
+``docopt``.
+
+
+Installation
+----------------------------------------------------------------------
+
+::
+
+pip install docopt_plus
+
+Usage
+----------------------------------------------------------------------
+
+::
+
+from docopt_plus import docopt
+
+
+
+Original documentation
+======================================================================
+
+Below is the original documentation, with info about added feaures.
+
+Everything should work the same with ``docopt_plus`` except that
+Python imports should be changes from ``from docopt import docopt``
+to ``from docopt_plus import docopt``.
+
+
+
 ``docopt`` creates *beautiful* command-line interfaces
 ======================================================================
 
@@ -186,7 +247,7 @@ the return dictionary will be:
 Help message format
 ======================================================================
 
-Help message consists of 2 parts:
+Help message consists of 3 parts:
 
 - Usage pattern, e.g.::
 
@@ -199,6 +260,13 @@ Help message consists of 2 parts:
     -o FILE      specify output file [default: ./test.txt]
     --quiet      print less text
     --verbose    print more text
+
+- Group descriptions (optional, ``docopt_plus`` only), e.g.::
+
+    Group 1:
+      <arg1> --opt1 [--opt2=ARG2]
+
+    Group2: command2 | command3
 
 Their format is described below; other text is ignored.
 
@@ -243,6 +311,9 @@ Each pattern can consist of the following elements:
   conventions of ``--options`` or ``<arguments>`` or ``ARGUMENTS``,
   plus two special commands: dash "``-``" and double dash "``--``"
   (see below).
+- **-groups-**. Groups are words that start and end with a dash (``-``), e.g.
+  ``-my_group-``. Every group defined in usage patterns has to be
+  described in its own section. See "Group description format" below.
 
 Use the following constructs to specify patterns:
 
@@ -359,6 +430,73 @@ The rules are as follows:
 
     # will be './here ./there', because it is not repeatable
     --not-repeatable=<arg>      [default: ./here ./there]
+
+Group descriptions format (``opcopt_plus`` only)
+----------------------------------------------------------------------
+
+The only function of groups is to make usage patterns more readable to
+humans. Under the hood, docopt will replace group elements (e.g.
+``-my_group-``) with their respective patterns.
+
+**Group description** has to define a pattern of argument, option, and
+command elements. Group elements withing groups are not allowed.
+
+::
+
+    My Group: --an_option | (--another_option | command) [-o <arg>]
+
+Case for group names is irrelevant. Underscores (``_``) in group elements
+are translated to spaces when looking for group description.
+
+It is possible to span pattern definitions on multiple lines. This
+definition is equivalent to the previous example::
+
+    My Group:
+      --an_option |
+      (--another_option | command)
+      [-o <arg>]
+
+Since groups are just readability replacements for other patterns,
+they can be enclosed in optional or required parenthesis, etc.
+These are all valid usage patterns using groups::
+
+    Usage: prog [-v] -input- [-out_file- | (-out_db- [--create])]
+
+      Input: <in_file>
+
+      Out File: <out_file>
+
+      Out DB:
+        <db_name>
+        [-u USERNAME [-p PASSWORD]]
+        [<host>]
+
+    Options:
+      ...
+
+The indentation is completely optional, at all levels, and has no relevance
+to finding definitions. However, it does make the usage instructions more
+readable, and is therefore encouraged.
+
+Also, group descriptions can be placed below or above "Options" section, the
+order bears has relevance to parsing.
+
+Similarly to Options, group patterns can have descriptions on every line,
+separated by at least two spaces. Unlike with Options, having comments on a
+separate line is not supported::
+
+      Out DB:
+        <db_name>  database name  # GOOD, 2 spaces
+        [-u USERNAME [-p PASSWORD]]
+          database credentials  # BAD, will be mistaken for a pattern!
+        [<host>] local or remote host name  # BAD, has only 1 space!
+
+
+Every group that is defined in usage patterns (e.g. ``-my_group-``) must
+also be described.
+
+Avoid naming your groups "Options" or "Usage", because that will collide
+with other Docopt features.
 
 Examples
 ----------------------------------------------------------------------

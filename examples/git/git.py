@@ -25,7 +25,7 @@ See 'git help <command>' for more information on a specific command.
 """
 from subprocess import call
 
-from docopt import docopt
+from docopt_plus import docopt
 
 
 if __name__ == '__main__':

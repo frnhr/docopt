@@ -1,8 +1,9 @@
+# coding=utf-8
 import sys
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
 
-from docopt import __version__
+from docopt_plus import __version__
 
 
 class PyTestCommand(TestCommand):
@@ -20,15 +21,15 @@ class PyTestCommand(TestCommand):
 
 
 setup(
-    name='docopt',
+    name='docopt_plus',
     version=__version__,
-    author='Vladimir Keleshev',
-    author_email='vladimir@keleshev.com',
+    author='Fran Hrženjak',
+    author_email='fran.hrzenjak@gmail.com',
     description='Pythonic argument parser, that will make you smile',
     license='MIT',
     keywords='option arguments parsing optparse argparse getopt',
-    url='http://docopt.org',
-    py_modules=['docopt'],
+    url='https://github.com/frnhr/docopt_plus',
+    py_modules=['docopt_plus'],
     long_description=open('README.rst').read(),
     classifiers=[
         'Development Status :: 3 - Alpha',
