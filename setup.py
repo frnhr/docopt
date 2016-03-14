@@ -1,3 +1,4 @@
+# coding=utf-8
 import sys
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
@@ -22,8 +23,8 @@ class PyTestCommand(TestCommand):
 setup(
     name='docopt',
     version=__version__,
-    author='Vladimir Keleshev',
-    author_email='vladimir@keleshev.com',
+    author='Fran Hrženjak',
+    author_email='fran.hrzenjak@gmail.com',
     description='Pythonic argument parser, that will make you smile',
     license='MIT',
     keywords='option arguments parsing optparse argparse getopt',
