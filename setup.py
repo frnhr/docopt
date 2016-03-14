@@ -21,15 +21,15 @@ class PyTestCommand(TestCommand):
 
 
 setup(
-    name='docopt',
+    name='docopt_plus',
     version=__version__,
     author='Fran Hrženjak',
     author_email='fran.hrzenjak@gmail.com',
     description='Pythonic argument parser, that will make you smile',
     license='MIT',
     keywords='option arguments parsing optparse argparse getopt',
-    url='http://docopt.org',
-    py_modules=['docopt'],
+    url='https://github.com/frnhr/docopt_plus',
+    py_modules=['docopt_plus'],
     long_description=open('README.rst').read(),
     classifiers=[
         'Development Status :: 3 - Alpha',
