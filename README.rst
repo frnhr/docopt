@@ -17,6 +17,20 @@ for a more stable and better supported package. If do not require any
 of the features that ``docopt_plus`` adds to Docopt, I encourage you
 to use the original project.
 
+Stability
+----------------------------------------------------------------------
+
+I will do my best to keep up with changes to Docopt. However, I make
+no promisses.
+
+Current verions of ``dopcopt_plus`` is based on a working bransh of
+``docopt``, version ``pre-0.6.3``. Hence current ``docopt_plus``
+version is ``0.6.3-alpha``
+
+That said, ``docopt` comes with a very good test coverage, and
+``docopt_plus`` adds to those tests, keeping 100% compatibility with
+``docopt``.
+
 
 Installation
 ----------------------------------------------------------------------
