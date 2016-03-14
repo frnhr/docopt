@@ -1,5 +1,5 @@
 Fork information
-======================================================================
+================
 
 
 ``docopt_plus`` is a fork of `Docopt <https://github.com/docopt/docopt>`_.
@@ -18,12 +18,12 @@ of the features that ``docopt_plus`` adds to Docopt, I encourage you
 to use the original project.
 
 Stability
-----------------------------------------------------------------------
+---------
 
 I will do my best to keep up with changes to Docopt. However, I make
-no promisses.
+no promises.
 
-Current verions of ``dopcopt_plus`` is based on a working bransh of
+Current versions of ``dopcopt_plus`` is based on a working branch of
 ``docopt``, version ``pre-0.6.3``. Hence current ``docopt_plus``
 version is ``0.6.3-alpha``
 
@@ -33,14 +33,14 @@ That said, ``docopt` comes with a very good test coverage, and
 
 
 Installation
-----------------------------------------------------------------------
+------------
 
 ::
 
 pip install docopt_plus
 
 Usage
-----------------------------------------------------------------------
+-----
 
 ::
 
@@ -49,9 +49,9 @@ from docopt_plus import docopt
 
 
 Original documentation
-======================================================================
+======================
 
-Below is the original documentation, with info about added feaures.
+Below is the original documentation, with info about added features.
 
 Everything should work the same with ``docopt_plus`` except that
 Python imports should be changes from ``from docopt import docopt``
@@ -60,7 +60,7 @@ to ``from docopt_plus import docopt``.
 
 
 ``docopt`` creates *beautiful* command-line interfaces
-======================================================================
+======================================================
 
 Video introduction to **docopt**: `PyCon UK 2012: Create *beautiful*
 command-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_
@@ -144,7 +144,7 @@ Also, `PEP 257 <http://www.python.org/dev/peps/pep-0257/>`_ recommends
 putting help message in the module docstrings.
 
 Installation
-======================================================================
+============
 
 Use `pip <http://pip-installer.org>`_ or easy_install::
 
@@ -156,14 +156,14 @@ project--it is self-contained.
 **docopt** is tested with Python 2.5, 2.6, 2.7, 3.2, 3.3 and PyPy.
 
 Testing
-======================================================================
+=======
 
 You can run unit tests using the command:
 
     python setup.py test
 
 API
-======================================================================
+===
 
 .. code:: python
 
@@ -245,7 +245,7 @@ the return dictionary will be:
      '<y>': '150'}
 
 Help message format
-======================================================================
+===================
 
 Help message consists of 3 parts:
 
@@ -271,7 +271,7 @@ Help message consists of 3 parts:
 Their format is described below; other text is ignored.
 
 Usage pattern format
-----------------------------------------------------------------------
+--------------------
 
 **Usage pattern** is a substring of ``doc`` that starts with
 ``usage:`` (case *insensitive*) and ends with a *visibly* empty line.
@@ -367,7 +367,7 @@ I.e. invoked with ``my_program.py file1 file2 --path=./here
 
 
 Option descriptions format
-----------------------------------------------------------------------
+--------------------------
 
 **Option descriptions** consist of a list of options that you put
 below your usage patterns.
@@ -416,7 +416,7 @@ The rules are as follows:
 
 - If the option is not repeatable, the value inside ``[default: ...]``
   will be interpreted as string.  If it *is* repeatable, it will be
-  splited into a list on whitespace::
+  split into a list on whitespace::
 
     Usage: my_program.py [--repeatable=<arg> --repeatable=<arg>]
                          [--another-repeatable=<arg>]...
@@ -431,8 +431,8 @@ The rules are as follows:
     # will be './here ./there', because it is not repeatable
     --not-repeatable=<arg>      [default: ./here ./there]
 
-Group descriptions format (``opcopt_plus`` only)
-----------------------------------------------------------------------
+Group descriptions format (``dopcopt_plus`` only)
+-------------------------------------------------
 
 The only function of groups is to make usage patterns more readable to
 humans. Under the hood, docopt will replace group elements (e.g.
@@ -499,7 +499,7 @@ Avoid naming your groups "Options" or "Usage", because that will collide
 with other Docopt features.
 
 Examples
-----------------------------------------------------------------------
+--------
 
 We have an extensive list of `examples
 <https://github.com/docopt/docopt/tree/master/examples>`_ which cover
@@ -507,10 +507,10 @@ every aspect of functionality of **docopt**.  Try them out, read the
 source if in doubt.
 
 Subparsers, multi-level help and *huge* applications (like git)
-----------------------------------------------------------------------
+---------------------------------------------------------------
 
 If you want to split your usage-pattern into several, implement
-multi-level help (with separate help-screen for each subcommand),
+multi-level help (with separate help-screen for each sub-command),
 want to interface with existing scripts that don't use **docopt**, or
 you're building the next "git", you will need the new ``options_first``
 parameter (described in API section above). To get you started quickly
@@ -520,7 +520,7 @@ we implemented a subset of git command-line interface as an example:
 
 
 Data validation
-----------------------------------------------------------------------
+---------------
 
 **docopt** does one thing and does it well: it implements your
 command-line interface.  However it does not validate the input data.
@@ -532,10 +532,10 @@ which uses **schema** to validate data and report an error to the
 user.
 
 Using docopt with config-files
-----------------------------------------------------------------------
+------------------------------
 
 Often configuration files are used to provide default values which
-could be overriden by command-line arguments.  Since **docopt**
+could be overridden by command-line arguments.  Since **docopt**
 returns a simple dictionary it is very easy to integrate with
 config-files written in JSON, YAML or INI formats.
 `config_file_example.py <examples/config_file_example.py>`_ provides
@@ -543,7 +543,7 @@ and example of how to use **docopt** with JSON or INI config-file.
 
 
 Development
-======================================================================
+===========
 
 We would *love* to hear what you think about **docopt** on our `issues
 page <http://github.com/docopt/docopt/issues>`_
@@ -553,7 +553,7 @@ Make pull requests, report bugs, suggest ideas and discuss
 <vladimir@keleshev.com>.
 
 Porting ``docopt`` to other languages
-======================================================================
+=====================================
 
 We think **docopt** is so good, we want to share it beyond the Python
 community! All official docopt ports to other languages can be found
@@ -569,7 +569,7 @@ Porting discussion is on `issues page
 <http://github.com/docopt/docopt/issues>`_.
 
 Changelog
-======================================================================
+=========
 
 **docopt** follows `semantic versioning <http://semver.org>`_.  The
 first release with stable API will be 1.0.0 (soon).  Until then, you
