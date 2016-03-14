@@ -16,7 +16,7 @@
     --ignore-missing     check if - even missing - files are ignored in dry run
 
 """
-from docopt import docopt
+from docopt_plus import docopt
 
 
 if __name__ == '__main__':

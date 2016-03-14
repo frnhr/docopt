@@ -1,3 +1,64 @@
+Fork information
+======================================================================
+
+
+``docopt_plus`` is a fork of `Docopt <https://github.com/docopt/docopt>`_.
+
+This fork adds some features that are not GNU / POSIX standard, and
+might not be as widely recognized.
+
+Features specific to ``docopt_plus``:
+
+- Pattern groups
+
+
+See the original `Docopt <https://github.com/docopt/docopt>`_ project
+for a more stable and better supported package. If do not require any
+of the features that ``docopt_plus`` adds to Docopt, I encourage you
+to use the original project.
+
+Stability
+----------------------------------------------------------------------
+
+I will do my best to keep up with changes to Docopt. However, I make
+no promisses.
+
+Current verions of ``dopcopt_plus`` is based on a working bransh of
+``docopt``, version ``pre-0.6.3``. Hence current ``docopt_plus``
+version is ``0.6.3-alpha``
+
+That said, ``docopt` comes with a very good test coverage, and
+``docopt_plus`` adds to those tests, keeping 100% compatibility with
+``docopt``.
+
+
+Installation
+----------------------------------------------------------------------
+
+::
+
+pip install docopt_plus
+
+Usage
+----------------------------------------------------------------------
+
+::
+
+from docopt_plus import docopt
+
+
+
+Original documentation
+======================================================================
+
+Below is the original documentation, with info about added feaures.
+
+Everything should work the same with ``docopt_plus`` except that
+Python imports should be changes from ``from docopt import docopt``
+to ``from docopt_plus import docopt``.
+
+
+
 ``docopt`` creates *beautiful* command-line interfaces
 ======================================================================
 
@@ -200,7 +261,7 @@ Help message consists of 3 parts:
     --quiet      print less text
     --verbose    print more text
 
-- Group descriptions (optional), e.g.::
+- Group descriptions (optional, ``docopt_plus`` only), e.g.::
 
     Group 1:
       <arg1> --opt1 [--opt2=ARG2]
@@ -370,7 +431,7 @@ The rules are as follows:
     # will be './here ./there', because it is not repeatable
     --not-repeatable=<arg>      [default: ./here ./there]
 
-Group descriptions format
+Group descriptions format (``opcopt_plus`` only)
 ----------------------------------------------------------------------
 
 The only function of groups is to make usage patterns more readable to

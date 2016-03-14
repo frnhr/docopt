@@ -10,8 +10,8 @@ import sys
 import re
 
 
-__all__ = ['docopt']
-__version__ = '0.6.1'
+__all__ = ['docopt_plus']
+__version__ = '0.6.3-alpha'
 
 
 class DocoptLanguageError(Exception):
@@ -542,7 +542,7 @@ def docopt(doc, argv=None, help=True, version=None, options_first=False):
 
     Example
     -------
-    >>> from docopt import docopt
+    >>> from docopt_plus import docopt
     >>> doc = '''
     ... Usage:
     ...     my_program tcp <host> <port> [--timeout=<seconds>]

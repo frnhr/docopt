@@ -20,7 +20,7 @@
     --progress            force progress reporting
 
 """
-from docopt import docopt
+from docopt_plus import docopt
 
 
 if __name__ == '__main__':
