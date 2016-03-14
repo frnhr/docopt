@@ -3,7 +3,7 @@ import sys
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
 
-from docopt import __version__
+from docopt_plus import __version__
 
 
 class PyTestCommand(TestCommand):

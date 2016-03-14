@@ -10,7 +10,7 @@ import sys
 import re
 
 
-__all__ = ['docopt']
+__all__ = ['docopt_plus']
 __version__ = '0.6.3-alpha'
 
 
