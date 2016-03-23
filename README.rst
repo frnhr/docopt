@@ -495,8 +495,9 @@ separate line is not supported::
 Every group that is defined in usage patterns (e.g. ``-my_group-``) must
 also be described.
 
-Avoid naming your groups "Options" or "Usage", because that will collide
-with other Docopt features.
+Currently group name must not end with ``Options`` because parser will confuse
+it with the special group used to describe common options.
+
 
 Examples
 --------
