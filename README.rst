@@ -25,7 +25,7 @@ no promises.
 
 Current versions of ``dopcopt_plus`` is based on a working branch of
 ``docopt``, version ``pre-0.6.3``. Hence current ``docopt_plus``
-version is ``0.6.3-alpha``
+version is ``0.6.3-alpha-1``
 
 That said, ``docopt` comes with a very good test coverage, and
 ``docopt_plus`` adds to those tests, keeping 100% compatibility with
