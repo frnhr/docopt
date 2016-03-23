@@ -25,7 +25,7 @@ no promises.
 
 Current versions of ``dopcopt_plus`` is based on a working branch of
 ``docopt``, version ``pre-0.6.3``. Hence current ``docopt_plus``
-version is ``0.6.3-alpha``
+version is ``0.6.3-alpha-1``
 
 That said, ``docopt` comes with a very good test coverage, and
 ``docopt_plus`` adds to those tests, keeping 100% compatibility with
@@ -495,8 +495,9 @@ separate line is not supported::
 Every group that is defined in usage patterns (e.g. ``-my_group-``) must
 also be described.
 
-Avoid naming your groups "Options" or "Usage", because that will collide
-with other Docopt features.
+Currently group name must not end with ``Options`` because parser will confuse
+it with the special group used to describe common options.
+
 
 Examples
 --------

@@ -11,7 +11,7 @@ import re
 
 
 __all__ = ['docopt_plus']
-__version__ = '0.6.3-alpha'
+__version__ = '0.6.3-alpha-1'
 
 
 class DocoptLanguageError(Exception):
@@ -466,7 +466,7 @@ def parse_groups(usage, doc):
             for line in group_lines if line.strip())
         usage = usage.replace('-%s-' % group_name,
                               '(%s)' % group_pattern)
-        doc = doc.replace('\n'.join(group_lines), '')
+        #doc = doc.replace('\n'.join(group_lines), '')
     return usage, doc
 
 

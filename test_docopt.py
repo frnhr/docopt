@@ -1,5 +1,5 @@
 from __future__ import with_statement
-from docopt import (docopt, DocoptExit, DocoptLanguageError,
+from docopt_plus import (docopt, DocoptExit, DocoptLanguageError,
                     Option, Argument, Command, OptionsShortcut,
                     Required, Optional, Either, OneOrMore,
                     parse_argv, parse_pattern, parse_section,
@@ -638,8 +638,8 @@ def test_pattern_groups_one_missing():
     try:
         docopt(doc)
     except DocoptLanguageError as e:
-        assert 'group "group33:"' in e.message
-        assert 'not found.' in e.message
+        assert 'group "group33:"' in str(e)
+        assert 'not found.' in str(e)
 
 
 def test_pattern_groups_dont_recurse():
@@ -654,3 +654,19 @@ def test_pattern_groups_dont_recurse():
     except RuntimeError as e:
         assert False, '{}'.format(e)
     assert a['bar'] == True and '-group1-' not in a
+
+
+def test_tmp():
+    doc = """Usage: prog -group1- -common- [options]
+
+  Group1: --foo
+
+  Options:
+    -a
+    -b
+
+  Common:
+    --bar | --baz
+          """
+    a = docopt(doc, '--foo --baz -a')
+    assert a == {"--foo": True, "--baz": True, "--bar": False, "-a": True, "-b": False}
